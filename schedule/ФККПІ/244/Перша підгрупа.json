@@ -1,0 +1,77 @@
+{
+  "status": true,
+  "schedule": {
+    "2.Пн.1": {
+      "teacher": "",
+      "discipline": "Основи теорії прийнятя рішень в кібербезп",
+      "classroom": "6.201",
+      "isLecture": "true"
+    },
+    "2.Пн.2": {
+      "teacher": "Мелешко О.О",
+      "discipline": "Проектування WEB-додатків",
+      "classroom": "1.001",
+      "isLecture": "true"
+    },
+    "2.Вт.1": {
+      "teacher": "Висоцька O.O",
+      "discipline": "Сучасні технології забезпечення кібербезп",
+      "classroom": "1.001",
+      "isLecture": "true"
+    },
+    "2.Вт.2": {
+      "teacher": "Гулак Н.К",
+      "discipline": "Компонентна база та схемоток IКСМ",
+      "classroom": "1.001",
+      "isLecture": "true"
+    },
+    "2.Ср.4": {
+      "teacher": "Весельська О.М",
+      "discipline": "Компонентна база та схемоток IКСМ",
+      "classroom": "11.116",
+      "isLecture": "false"
+    },
+    "2.Ср.5": {
+      "teacher": "Варивода В.О",
+      "discipline": "Вища математика",
+      "classroom": "3.110",
+      "isLecture": "false"
+    },
+    "2.Чт.1": {
+      "teacher": "Ракицький В.А",
+      "discipline": "Основи програмування",
+      "classroom": "11.115",
+      "isLecture": "false"
+    },
+    "2.Чт.2": {
+      "teacher": "Дубчак О.B",
+      "discipline": "Основи програмування",
+      "classroom": "1.001",
+      "isLecture": "true"
+    },
+    "2.Пт.3": {
+      "teacher": "Галата Л.П",
+      "discipline": "Проектування WEB-додатків",
+      "classroom": "11.117",
+      "isLecture": "false"
+    },
+    "2.Пт.4": {
+      "teacher": "",
+      "discipline": "Іноземна мова",
+      "classroom": "3.213",
+      "isLecture": "false"
+    },
+    "2.Пт.5": {
+      "teacher": "Весельська О.М",
+      "discipline": "Основи теорії прийнятя рішень в кібербезп",
+      "classroom": "11.417",
+      "isLecture": "false"
+    },
+    "2.Пт.6": {
+      "teacher": "Меотинюк О.М",
+      "discipline": "Апаратне забезпечення інформ систем",
+      "classroom": "11.412",
+      "isLecture": "false"
+    }
+  }
+}
