@@ -1,7 +1,8 @@
 import datetime
 import json
-from aiogram.dispatcher import FSMContext
+
 from aiogram.types import Message
+
 from keyboards.default.about_bot_key import keyboard_about
 from keyboards.default.main_menu import main_menu
 from loader import dp
@@ -13,33 +14,69 @@ async def main_page(message: Message):
     await message.answer(text='Головне меню', reply_markup=main_menu)
 
 
-
 @dp.message_handler(text='Сьогодні')
 async def schedule_today(message: Message):
+    global week_days, text
+    global num_of_week
+
     today = int(datetime.date.today().weekday())
     with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
         date = json.load(json_file)
+
+    week = list(str(datetime.date.today()).replace('-', ' ').split(' '))
+    week_now = datetime.date(int(week[0]), int(week[1]), int(week[2])).isocalendar()[1]
+    if week_now % 2 == 0:
+        num_of_week = '2'
+    else:
+        num_of_week = '1'
     if today == 0:
-        text = 'Сьогодні понеділок'
-        return await message.answer(text=date)
+        week_days = 'Пнд'
+
     if today == 1:
-        text = 'Сьогодні вівторок'
-        return await message.answer(text=text)
+        week_days = 'Втр'
+
     if today == 2:
-        text = 'Сьогодні середа'
-        return text
+        week_days = 'Срд'
+
     if today == 3:
-        text = 'Сьогодні четверг'
-        return await message.answer(text=text)
+        week_days = 'Чтв'
+
     if today == 4:
-        text = 'Сьогодні пятниця'
-        return await message.answer(text=text)
+        week_days = 'Птн'
+
     if today == 5:
-        text = 'Сьогодні субота'
-        return await message.answer(text=text)
+        week_days = 'Сбт'
+
     if today == 6:
-        text = 'Сьогодні неділя'
-        return await message.answer(text=text)
+        week_days = 'Нд'
+
+
+
+    num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f"{num_of_week}.{week_days}" in x])
+    # a = 1
+    # b = 0
+    # while a <= len(num_of_lessons):
+    #     text = (
+    #             f'Предмет: {date["schedule"][f"{num_of_week}.{week_days}.{num_of_lessons[b]}"]["discipline"]}\n'
+    #             f'Аудиторія:  {date["schedule"][f"{num_of_week}.{week_days}.{num_of_lessons[b]}"]["classroom"]}'
+    #
+    #         )
+    #
+    #
+    #     a = a + 1
+    #     b = b + 1
+    t = ''
+    for i in num_of_lessons:
+        text = (
+                f'{emojize(":bell:")} {i} пара\n'
+                f'{emojize(":clock7:")} Часи пари\n'
+                f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
+                f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
+                f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}\n\n'
+        )
+        t += text
+    await message.answer(text = t)
+
 
 
 @rate_limit(20, 'Завтра')
@@ -70,9 +107,6 @@ async def schedule_tomorrow(message: Message):
         return await message.answer(text=text)
 
 
-
-
-
 from aiogram.types import Message
 from aiogram.utils.emoji import emojize
 
@@ -96,7 +130,6 @@ async def serch_schedue(message: Message):
         f'{emojize(":bell:")} 6 пара\n{emojize(":five_o’clock:")} 17:10-18:45 \n\n'
         f'{emojize(":bell:")} 7 пара\n{emojize(":seven_o’clock:")} 19:00-20:35')
     await message.answer(text)
-
 
 
 # functional to know num of week
@@ -132,4 +165,3 @@ async def about(message: Message):
         )
     )
     await message.answer(text=about, reply_markup=keyboard_about)
-
