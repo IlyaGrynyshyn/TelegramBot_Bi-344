@@ -13,7 +13,8 @@ from utils.misc import rate_limit
 @dp.message_handler(text="Назад")
 async def main_page(message: Message):
     await message.answer(text='Головне меню', reply_markup=main_menu)
-
+with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
+    date = json.load(json_file)
 
 @dp.message_handler(text='Сьогодні')
 async def schedule_today(message: Message):
@@ -21,8 +22,8 @@ async def schedule_today(message: Message):
     global num_of_week
 
     today = int(datetime.date.today().weekday())
-    with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
-        date = json.load(json_file)
+    # with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
+    #     date = json.load(json_file)
 
     week = list(str(datetime.date.today()).replace('-', ' ').split(' '))
     week_now = datetime.date(int(week[0]), int(week[1]), int(week[2])).isocalendar()[1]
@@ -72,29 +73,44 @@ async def schedule_today(message: Message):
 @rate_limit(20, 'Завтра')
 @dp.message_handler(text="Завтра")
 async def schedule_tomorrow(message: Message):
+    global week_days
     today = int(datetime.date.today().weekday())
     tomorrow = int(today) + 1
+    if tomorrow % 2 == 0:
+        num_of_week = '2'
+    else:
+        num_of_week = '1'
     if tomorrow == 0:
-        text = 'Завтра понеділок'
-        return await message.answer(text=text)
+        week_days = 'Втр'
+
     if tomorrow == 1:
-        text = 'Завтра вівторок'
-        return await message.answer(text=text)
+        week_days = 'Срд'
     if tomorrow == 2:
-        text = 'Завтра середа'
-        return await message.answer(text=text)
+        week_days = 'Чтв'
     if tomorrow == 3:
-        text = 'Завтра четверг'
-        return await message.answer(text=text)
+        week_days = 'Птн'
     if tomorrow == 4:
-        text = 'Завтра пятниця'
-        return await message.answer(text=text)
+        week_days = 'Сбт'
     if tomorrow == 5:
-        text = 'Завтра субота'
-        return await message.answer(text=text)
+        week_days = 'Нд'
     if tomorrow == 6:
-        text = 'Завтра неділя'
-        return await message.answer(text=text)
+        week_days = 'Пнд'
+
+    num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f"{num_of_week}.{week_days}" in x])
+
+    text = ''
+    for i in num_of_lessons:
+        t = (
+            f'{emojize(":bell:")} {i} пари\n'
+            # f'{emojize(":clock7:")} Часи пари\n'
+            f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
+            f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}'
+        )
+        text += t
+
+    await message.answer(text)
+
 
 
 from aiogram.types import Message
