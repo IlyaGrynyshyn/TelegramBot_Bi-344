@@ -2,6 +2,7 @@ import datetime
 import json
 
 from aiogram.types import Message
+from aiogram.utils.exceptions import MessageTextIsEmpty
 
 from keyboards.default.about_bot_key import keyboard_about
 from keyboards.default.main_menu import main_menu
@@ -50,33 +51,22 @@ async def schedule_today(message: Message):
     if today == 6:
         week_days = 'Нд'
 
-
-
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f"{num_of_week}.{week_days}" in x])
-    # a = 1
-    # b = 0
-    # while a <= len(num_of_lessons):
-    #     text = (
-    #             f'Предмет: {date["schedule"][f"{num_of_week}.{week_days}.{num_of_lessons[b]}"]["discipline"]}\n'
-    #             f'Аудиторія:  {date["schedule"][f"{num_of_week}.{week_days}.{num_of_lessons[b]}"]["classroom"]}'
-    #
-    #         )
-    #
-    #
-    #     a = a + 1
-    #     b = b + 1
-    t = ''
-    for i in num_of_lessons:
-        text = (
-                f'{emojize(":bell:")} {i} пара\n'
-                f'{emojize(":clock7:")} Часи пари\n'
-                f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
-                f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
-                f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}\n\n'
-        )
-        t += text
-    await message.answer(text = t)
 
+    text = ''
+    for i in num_of_lessons:
+        t = (
+            f'{emojize(":bell:")} {i} пари\n'
+            # f'{emojize(":clock7:")} Часи пари\n'
+            f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
+            f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}'
+        )
+        text += t
+    try:
+        await message.answer(text)
+    except MessageTextIsEmpty:
+        await message.answer(text=f'{emojize(":fire:")} У тебе сьогодні вихідний')
 
 
 @rate_limit(20, 'Завтра')
