@@ -33,6 +33,4 @@ async def bot_start(message: types.Message, state: FSMContext):
     except asyncpg.exceptions.UniqueViolationError:
         pass
 
-    await message.answer(welcome_text,reply_markup=default.main_menu)
-
-
+    await message.answer(welcome_text, reply_markup=default.main_menu)

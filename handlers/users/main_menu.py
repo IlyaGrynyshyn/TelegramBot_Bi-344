@@ -8,13 +8,17 @@ from keyboards.default.about_bot_key import keyboard_about
 from keyboards.default.main_menu import main_menu
 from loader import dp
 from utils.misc import rate_limit
+from handlers.users.schedule_by_day import lessons_time
 
 
 @dp.message_handler(text="Назад")
 async def main_page(message: Message):
     await message.answer(text='Головне меню', reply_markup=main_menu)
+
+
 with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
     date = json.load(json_file)
+
 
 @dp.message_handler(text='Сьогодні')
 async def schedule_today(message: Message):
@@ -56,12 +60,14 @@ async def schedule_today(message: Message):
 
     text = ''
     for i in num_of_lessons:
+        if i == 0:
+            week = 8
         t = (
             f'{emojize(":bell:")} {i} пари\n'
-            # f'{emojize(":clock7:")} Часи пари\n'
+            f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}\n\n'
         )
         text += t
     try:
@@ -76,24 +82,25 @@ async def schedule_tomorrow(message: Message):
     global week_days
     today = int(datetime.date.today().weekday())
     tomorrow = int(today) + 1
-    if tomorrow % 2 == 0:
+    week = list(str(datetime.date.today()).replace('-', ' ').split(' '))
+    week_now = datetime.date(int(week[0]), int(week[1]), int(week[2])).isocalendar()[1]
+    if week_now % 2 == 0:
         num_of_week = '2'
     else:
         num_of_week = '1'
-    if tomorrow == 0:
-        week_days = 'Втр'
-
     if tomorrow == 1:
-        week_days = 'Срд'
+        week_days = 'Втр'
     if tomorrow == 2:
-        week_days = 'Чтв'
+        week_days = 'Срд'
     if tomorrow == 3:
-        week_days = 'Птн'
+        week_days = 'Чтв'
     if tomorrow == 4:
-        week_days = 'Сбт'
+        week_days = 'Птн'
     if tomorrow == 5:
-        week_days = 'Нд'
+        week_days = 'Сбт'
     if tomorrow == 6:
+        week_days = 'Нд'
+    if tomorrow == 0:
         week_days = 'Пнд'
 
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f"{num_of_week}.{week_days}" in x])
@@ -102,27 +109,19 @@ async def schedule_tomorrow(message: Message):
     for i in num_of_lessons:
         t = (
             f'{emojize(":bell:")} {i} пари\n'
-            # f'{emojize(":clock7:")} Часи пари\n'
+            f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}\n\n'
         )
         text += t
 
     await message.answer(text)
 
 
-
 from aiogram.types import Message
 from aiogram.utils.emoji import emojize
 
-
-@rate_limit(20, 'Розклад')
-@dp.message_handler(text='Розклад')
-async def schedue(message: Message):
-    text = (
-        'Розклад')
-    await message.answer(text)
 
 
 @dp.message_handler(text='Розклад дзвінків')

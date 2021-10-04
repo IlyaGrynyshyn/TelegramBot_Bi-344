@@ -14,13 +14,13 @@
       "isLecture" : "true"
     },
     "1.Втр.2": {
-      "teacher": "",
-       "discipline": "Основи теорыъ прийнят ріш у кібербезпеці",
+      "teacher": "Надо узнати",
+       "discipline": "Основи теорії прийнят ріш у кібербезпеці",
       "classroom": "6.201",
       "isLecture" : "true"
     },
     "1.Втр.3": {
-      "teacher": "",
+      "teacher": "Надо узнати",
        "discipline": "Іноземна мова",
       "classroom": "3.513",
       "isLecture" : "false"
@@ -56,13 +56,13 @@
       "isLecture" : "false"
     },
     "1.Птн.2": {
-      "teacher": "",
+      "teacher": "Надо узнати",
       "discipline": "Іноземна мова",
       "classroom": "3.513",
       "isLecture" : "false"
     },
     "2.Пнд.1": {
-      "teacher": "",
+      "teacher": "Надо узнати",
       "discipline": "Основи теорії прийнятя рішень в кібербезп",
       "classroom": "6.201",
       "isLecture": "true"
@@ -116,7 +116,7 @@
       "isLecture": "false"
     },
     "2.Птн.4": {
-      "teacher": "",
+      "teacher": "Надо узнати",
       "discipline": "Іноземна мова",
       "classroom": "3.213",
       "isLecture": "false"
