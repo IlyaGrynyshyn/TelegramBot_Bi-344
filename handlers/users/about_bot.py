@@ -24,3 +24,7 @@ async def bot_about(message: types.Message):
 
     )
     await message.answer(about_bot, reply_markup=keyboard_about)
+
+@dp.message_handler(text = 'Змінити підгрупу')
+async def change_query(message:types.Message):
+    await message.answer(f'Натисни на цю команту {emojize(":arrow_right:")}  /change_query')

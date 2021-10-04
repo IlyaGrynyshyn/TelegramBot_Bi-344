@@ -17,9 +17,8 @@ async def main_page(message: Message):
     await message.answer(text='Головне меню', reply_markup=main_menu)
 
 
-
 @dp.message_handler(text='Сьогодні')
-async def schedule_today(message: Message,state:FSMContext):
+async def schedule_today(message: Message, state: FSMContext):
     global week_days, text
     global num_of_week
     data = await state.get_data()
@@ -32,8 +31,7 @@ async def schedule_today(message: Message,state:FSMContext):
         date = json.load(json_file)
 
     today = int(datetime.date.today().weekday())
-    # with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
-    #     date = json.load(json_file)
+
 
     week = list(str(datetime.date.today()).replace('-', ' ').split(' '))
     week_now = datetime.date(int(week[0]), int(week[1]), int(week[2])).isocalendar()[1]
@@ -86,7 +84,7 @@ async def schedule_today(message: Message,state:FSMContext):
 
 @rate_limit(20, 'Завтра')
 @dp.message_handler(text="Завтра")
-async def schedule_tomorrow(message: Message,state:FSMContext):
+async def schedule_tomorrow(message: Message, state: FSMContext):
     global week_days
     data = await state.get_data()
     subgroup = data.get('subgroup')

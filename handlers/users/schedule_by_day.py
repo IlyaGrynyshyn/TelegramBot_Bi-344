@@ -7,9 +7,6 @@ from aiogram.utils.emoji import emojize
 from keyboards.default.schedule_by_day import schedule_by_day
 from loader import dp
 
-# with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
-#     date = json.load(json_file)
-
 lessons_time = {
     '1': "8:00-9:35",
     '2': "9:50-11:25",
@@ -21,8 +18,9 @@ lessons_time = {
 
 }
 
+
 @dp.message_handler(text='Розклад')
-async def schedule(message: Message,state:FSMContext):
+async def schedule(message: Message, state: FSMContext):
     text = (
         'Розклад')
     global date

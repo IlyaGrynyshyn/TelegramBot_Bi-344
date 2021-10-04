@@ -1,7 +1,7 @@
 import asyncpg
 from aiogram import types
 from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.builtin import CommandStart
+from aiogram.dispatcher.filters.builtin import CommandStart, Text
 from aiogram.utils.emoji import emojize
 from keyboards import default
 from loader import dp
@@ -27,7 +27,7 @@ async def bot_start(message: types.Message, state: FSMContext):
 
         #f"\n\nДля початку, скажи мені хто ти{emojize(':smirk_cat:')}:"
         
-        f"\n\nОбери з якої підгрупи ти"
+        f"\n\nОбери з якої підгрупи ти?{emojize(':sunglasses:')}"
     )
 
     try:
@@ -42,6 +42,7 @@ async def bot_start(message: types.Message, state: FSMContext):
 """
 Функція яка приймає вибір користувача з клавіатури schoose_subgroup
 """
+
 @dp.message_handler(state = StatesOfBot.start_state)
 async def choose_subgroup(message:types.Message, state:FSMContext):
     subgroup = message.text
