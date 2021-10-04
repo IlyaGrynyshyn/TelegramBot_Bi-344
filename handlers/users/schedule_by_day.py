@@ -1,19 +1,14 @@
-import datetime
 import json
 
+from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 from aiogram.utils.emoji import emojize
-from aiogram.utils.exceptions import MessageTextIsEmpty
 
-from keyboards.default.about_bot_key import keyboard_about
-from keyboards.default.main_menu import main_menu
-from loader import dp
-from utils.misc import rate_limit
 from keyboards.default.schedule_by_day import schedule_by_day
-from aiogram.types import Message
+from loader import dp
 
-with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
-    date = json.load(json_file)
+# with open("schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
+#     date = json.load(json_file)
 
 lessons_time = {
     '1': "8:00-9:35",
@@ -27,9 +22,18 @@ lessons_time = {
 }
 
 @dp.message_handler(text='Розклад')
-async def schedue(message: Message):
+async def schedule(message: Message,state:FSMContext):
     text = (
         'Розклад')
+    global date
+    data = await state.get_data()
+    subgroup = data.get('subgroup')
+    if subgroup == '1':
+        select = "Перша підгрупа.json"
+    else:
+        select = "Друга підгрупа.json"
+    with open(f"schedule/ФККПІ/244/{select}", "r", encoding='utf-8') as json_file:
+        date = json.load(json_file)
     await message.answer(text, reply_markup=schedule_by_day)
 
 
@@ -39,12 +43,17 @@ async def first_monday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f"{day}" in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -54,14 +63,20 @@ async def first_monday(message: Message):
 async def first_tuesday(message: Message):
     day = '1.Втр'
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
+
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -73,12 +88,17 @@ async def first_wednesday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -90,12 +110,17 @@ async def first_thursday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -107,12 +132,17 @@ async def first_friday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -129,12 +159,17 @@ async def first_monday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f"{day}" in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -146,12 +181,17 @@ async def first_tuesday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -163,12 +203,17 @@ async def first_wednesday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -180,12 +225,17 @@ async def first_thursday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -197,12 +247,17 @@ async def first_friday(message: Message):
     num_of_lessons = ([x[-1] for x in date['schedule'].keys() if f'{day}' in x])
     text = ""
     for i in num_of_lessons:
+        if date["schedule"][f"{day}.{i}"]["isLecture"] == 'true':
+            islecture = 'Лекція'
+        else:
+            islecture = 'Практика'
         t = (
             f'{emojize(":bell:")} {i} пари\n'
             f'{emojize(":clock7:")} ({lessons_time[i]})\n'
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
-            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n\n'
+            f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
+            f'{emojize(":mortar_board:")} {islecture}\n\n'
         )
         text += t
     await message.answer(text=text)
