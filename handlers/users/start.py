@@ -30,11 +30,11 @@ async def bot_start(message: types.Message, state: FSMContext):
         f"\n\nОбери з якої підгрупи ти?{emojize(':sunglasses:')}"
     )
 
-    try:
-        await commands.add_user(id=message.from_user.id,
-                                name=name)
-    except asyncpg.exceptions.UniqueViolationError:
-        pass
+    # try:
+    #     await commands.add_user(id=message.from_user.id,
+    #                             name=name)
+    # except asyncpg.exceptions.UniqueViolationError:
+    #     pass
 
     await message.answer(welcome_text, reply_markup=default.schoose_subgroup)
     await StatesOfBot.first()

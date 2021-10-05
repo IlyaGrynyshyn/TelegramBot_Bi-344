@@ -32,7 +32,6 @@ async def schedule_today(message: Message, state: FSMContext):
 
     today = int(datetime.date.today().weekday())
 
-
     week = list(str(datetime.date.today()).replace('-', ' ').split(' '))
     week_now = datetime.date(int(week[0]), int(week[1]), int(week[2])).isocalendar()[1]
     if week_now % 2 == 0:
@@ -82,7 +81,6 @@ async def schedule_today(message: Message, state: FSMContext):
         await message.answer(text=f'{emojize(":fire:")} У тебе сьогодні вихідний')
 
 
-@rate_limit(20, 'Завтра')
 @dp.message_handler(text="Завтра")
 async def schedule_tomorrow(message: Message, state: FSMContext):
     global week_days
