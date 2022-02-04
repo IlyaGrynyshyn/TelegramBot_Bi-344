@@ -1,137 +1,174 @@
 {
   "status": true,
   "schedule": {
-    "1.Пнд.2": {
-      "teacher": "Мелешко О.О",
-      "discipline": "Проектування WEB-додатків",
-      "classroom": "1.001",
-      "isLecture": "true"
-    },
     "1.Пнд.3": {
-      "teacher": "Гулак Н.К",
-       "discipline": "Компонентна база та схемоток IКСМ",
+      "teacher": "Дубчак О.В.",
+      "discipline": "Основи мережевих технологій",
       "classroom": "1.001",
-      "isLecture" : "true"
+      "isLecture": "true",
+      "google_meet" : "https://classroom.google.com/c/NDU4MjIzNTg5MDk4"
+    },
+    "1.Пнд.4": {
+      "teacher": "Хохлачева Ю.Є",
+       "discipline": "Моніторинг та тестування сист кібербез",
+      "classroom": "4.203",
+      "isLecture" : "true",
+      "google_meet" : "-"
     },
     "1.Втр.2": {
-      "teacher": "Надо узнати",
-       "discipline": "Основи теорыъ прийнят ріш у кібербезпеці",
-      "classroom": "6.201",
-      "isLecture" : "true"
+      "teacher": "Рацький В.А",
+       "discipline": "Основи мережевих технологій",
+      "classroom": "11.116",
+      "isLecture" : "false",
+      "google_meet" : "https://meet.google.com/two-afxr-tqk?authuser=0&hs=179"
     },
     "1.Втр.3": {
-      "teacher": "Надо узнати",
-       "discipline": "Іноземна мова",
-      "classroom": "3.513",
-      "isLecture" : "false"
-    },
-    "1.Срд.1": {
-      "teacher": "Мартинюк Н.Є",
-      "discipline": "Апаратне забезпечення інформ систем",
-      "classroom": "4.203",
-      "isLecture" : "true"
-    },
-    "1.Срд.2": {
-      "teacher": "Денисюк В.П",
-      "discipline": "Вища математика",
-      "classroom": "6.201",
-      "isLecture" : "true"
-    },
-    "1.Чтв.1": {
-      "teacher": "Висоцька O.O",
-      "discipline": "Сучасні технології забезпечення кібербезп",
-      "classroom": "1.001",
-      "isLecture" : "true"
-    },
-     "1.Чтв.2": {
-      "teacher": "Дубчак О.B",
-      "discipline": "Основи програмування",
-      "classroom": "1.001",
-      "isLecture" : "true"
-    },
-    "1.Птн.1": {
-      "teacher": "Весельська О.М",
-      "discipline": "Основи теорії прийнятя рішень в кібербезп",
+      "teacher": "Рацький В.А",
+       "discipline": "Основи мережевих технологій",
       "classroom": "11.116",
-      "isLecture": "false"
+      "isLecture" : "false",
+      "google_meet" : "https://meet.google.com/two-afxr-tqk?authuser=0&hs=179"
     },
-    "1.Птн.2": {
-      "teacher": "",
-      "discipline": "Іноземна мова",
-      "classroom": "3.513",
-      "isLecture" : "false"
+    "1.Втр.4": {
+      "teacher": "Скибка О.П.",
+       "discipline": "Філософія",
+      "classroom": "11.302",
+      "isLecture" : "false",
+      "google_meet" : "-"
     },
-    "2.Пнд.1": {
-      "teacher": "",
-      "discipline" :"Основи теорії прийнятя рішень в кібербезп",
-      "classroom": "6.201",
-      "isLecture": "true"
+    "1.Срд.3": {
+      "teacher": "Ільєнко С.С",
+      "discipline": "Сигнали та проц у системах захист інфорорм",
+      "classroom": "1.002",
+      "isLecture" : "true",
+      "google_meet" : "https://meet.google.com/eac-xvmd-gec?authuser=0"
     },
-    "2.Пнд.2": {
+    "1.Срд.4": {
       "teacher": "Мелешко О.О",
-      "discipline": "Проектування WEB-додатків",
+      "discipline": "Технології програмування",
+      "classroom": "1.002",
+      "isLecture" : "true",
+      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
+
+    },
+    "1.Чтв.2": {
+      "teacher": "Мелешко Т.В",
+      "discipline": "Апаратне забезпення інформ систем ",
+      "classroom": "4.203",
+      "isLecture" : "true",
+      "google_meet" : "-"
+    },
+     "1.Чтв.3": {
+      "teacher": "Дубчак О.B",
+      "discipline": "Вступ до Інтеернету речей",
       "classroom": "1.001",
-      "isLecture" : "true"
+      "isLecture" : "true",
+       "google_meet" : "https://meet.google.com/abg-abqs-qfc?authuser=0&hs=179"
+    },
+    "1.Птн.3": {
+      "teacher": "Шелуха О.О",
+      "discipline": "Сигнали та проц у систем захис інфоррм",
+      "classroom": "11.115",
+      "isLecture" : "false",
+      "google_meet" : "https://meet.google.com/eac-xvmd-gec?authuser=0&hs=179"
+    },
+    "1.Птн.4": {
+      "teacher": "Шелуха О.О",
+      "discipline": "Сигнали та проц у систем захис інфоррм",
+      "classroom": "11.115",
+      "isLecture" : "false",
+      "google_meet" : "https://meet.google.com/eac-xvmd-gec?authuser=0&hs=179"
+    },
+    "1.Птн.5": {
+      "teacher": "Мелешко О.О",
+      "discipline": "Апаратне забезпечення інформ систем",
+      "classroom": "11.409",
+      "isLecture": "false",
+      "google_meet" : "-"
+    },
+    "2.Пнд.3": {
+      "teacher": "Дубчак О.В.",
+      "discipline": "Основи мережевих технологій",
+      "classroom": "1.001",
+      "isLecture": "true",
+      "google_meet" : "https://classroom.google.com/c/NDU4MjIzNTg5MDk4"
+    },
+    "2.Пнд.4": {
+      "teacher": "Хохлачева Ю.Є",
+       "discipline": "Моніторинг та тестування сист кібербез",
+      "classroom": "4.203",
+      "isLecture" : "true",
+      "google_meet" : "-"
     },
     "2.Втр.1": {
-      "teacher": "Висоцька O.O",
-      "discipline": "Сучасні технології забезпечення кібербезп",
-      "classroom": "1.001",
-      "isLecture" : "true"
+      "teacher": "Хохлачева Ю.Є",
+      "discipline": "Моніторінг та тестування сист кібербез",
+      "classroom": "11.303",
+      "isLecture": "false",
+      "google_meet" : "-"
     },
     "2.Втр.2": {
-      "teacher": "Гулак Н.К",
-      "discipline": "Компонентна база та схемоток IКСМ",
-      "classroom": "1.001",
-      "isLecture" : "true"
+      "teacher": "Проконенко О.В",
+      "discipline": "Технології програмування",
+      "classroom": "11.303",
+      "isLecture": "false",
+      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
+    },
+    "2.Втр.3": {
+      "teacher": "Проконенко О.В",
+      "discipline": "Технології програмування",
+      "classroom": "11.303",
+      "isLecture": "false",
+      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
+    },
+    "2.Срд.3": {
+      "teacher": "Ільєнко С.С",
+      "discipline": "Сигнали та проц у систем захист інформ",
+      "classroom": "1.002",
+      "isLecture": "true",
+      "google_meet" : "https://meet.google.com/ykx-gdst-mcd?authuser=0&hs=179"
     },
     "2.Срд.4": {
-      "teacher": "Висоцька О.О",
-      "discipline": "Сучасні технології забезпечення кібербезп",
-      "classroom": "11.303",
-      "isLecture" : "false"
-    },
-    "2.Срд.5": {
-      "teacher": "Варивода В.О",
-      "discipline": "Вища математика",
-      "classroom": "3.110",
-      "isLecture" : "false"
-    },
-    "2.Срд.6": {
-      "teacher": "Мартинюк Н.Є",
-      "discipline": "Апаратне забезпечення інформ систем",
-      "classroom": "3.412",
-      "isLecture" : "false"
-    },
-    "2.Чтв.1": {
-      "teacher": "Фролова Н.Є",
-      "discipline": "Компонентна база та схемоток IКСМ",
-      "classroom": "11.302",
-      "isLecture" : "false"
-    },
-    "2.Чтв.2": {
-      "teacher": "Дубчак О.B",
-      "discipline": "Основи програмування",
-      "classroom": "1.001",
-      "isLecture" : "true"
+      "teacher": "Мелешко О.О",
+      "discipline": "Технології програмування",
+      "classroom": "1.002",
+      "isLecture": "true",
+      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
     },
     "2.Чтв.3": {
-      "teacher": "Розклад В.А",
-      "discipline": "Основи програмування",
-      "classroom": "3.115",
-      "isLecture" : "false"
+      "teacher": "Дубчак О.В",
+      "discipline": "Вступ до Інтернету речей",
+      "classroom": "4.203",
+      "isLecture": "true",
+      "google_meet" : "https://meet.google.com/cop-mepu-ajs?authuser=0&hs=179"
+    },
+    "2.Чтв.4": {
+      "teacher": "Скибка О.П",
+      "discipline": "Філосоції",
+      "classroom": "4.203",
+      "isLecture": "true",
+      "google_meet" : "https://meet.google.com/cip-ggzj-zyx?authuser=0&hs=179"
+    },
+    "2.Птн.3": {
+      "teacher": "Рацький В.А",
+      "discipline": "Вступ до Інтернету речей",
+      "classroom": "11.116",
+      "isLecture": "false",
+      "google_meet" : "https://meet.google.com/epg-kqwi-cte?authuser=0&hs=179"
     },
     "2.Птн.4": {
-      "teacher": "Надо узнати",
-      "discipline": "Іноземна мова",
-      "classroom": "3.213",
-      "isLecture" : "false"
+      "teacher": "Скибка О.П",
+      "discipline": "Філософія",
+      "classroom": "11.302",
+      "isLecture": "false",
+      "google_meet" : "https://meet.google.com/cip-ggzj-zyx?authuser=0&hs=179"
     },
     "2.Птн.5": {
-      "teacher": "Галата П.П",
-      "discipline": "Проектування WEB-додатків",
-      "classroom": "11.117",
-      "isLecture" : "false"
+      "teacher": "Мелешко Т.В",
+      "discipline": "Апаратне забезпечення інформацыйних систем",
+      "classroom": "11.409",
+      "isLecture": "false",
+      "google_meet" : "-"
     }
   }
 }

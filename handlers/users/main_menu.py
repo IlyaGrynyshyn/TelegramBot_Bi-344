@@ -23,11 +23,12 @@ async def schedule_today(message: Message, state: FSMContext):
     global num_of_week
     data = await state.get_data()
     subgroup = data.get('subgroup')
-    if subgroup == '1':
-        select = "Перша підгрупа.json"
-    else:
-        select = "Друга підгрупа.json"
-    with open(f"schedule/ФККПІ/244/{select}", "r", encoding='utf-8') as json_file:
+    # if subgroup == '1':
+    #     select = "Перша підгрупа.json"
+    # else:
+    #     select = "Друга підгрупа.json"
+
+    with open(f"schedule/ФККПІ/244/Перша підгрупа.json", "r", encoding='utf-8') as json_file:
         date = json.load(json_file)
 
     today = int(datetime.date.today().weekday())
@@ -72,7 +73,8 @@ async def schedule_today(message: Message, state: FSMContext):
             f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     try:
@@ -130,11 +132,14 @@ async def schedule_tomorrow(message: Message, state: FSMContext):
             f'{emojize(":book:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{num_of_week}.{week_days}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{num_of_week}.{week_days}.{i}"]["google_meet"]}\n\n'
         )
         text += t
-
-    await message.answer(text)
+    try:
+        await message.answer(text)
+    except MessageTextIsEmpty:
+        await message.answer(text=f'{emojize(":fire:")} У тебе завтра вихідний')
 
 
 from aiogram.types import Message
@@ -150,7 +155,7 @@ async def serch_schedue(message: Message):
         f'{emojize(":bell:")} 4 пара\n{emojize(":one-thirty:")} 13:30-15:05 \n\n'
         f'{emojize(":bell:")} 5 пара\n{emojize(":three-thirty:")} 15:20-16:55 \n\n'
         f'{emojize(":bell:")} 6 пара\n{emojize(":five_o’clock:")} 17:10-18:45 \n\n'
-        f'{emojize(":bell:")} 7 пара\n{emojize(":seven_o’clock:")} 19:00-20:35')
+        f'{emojize(":bell:")} 7 пара\n{emojize(":seven_o’clock:")} 19:00-20:35 \n\n')
     await message.answer(text)
 
 

@@ -51,7 +51,8 @@ async def first_monday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -74,7 +75,8 @@ async def first_tuesday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -96,7 +98,8 @@ async def first_wednesday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -118,7 +121,8 @@ async def first_thursday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -140,7 +144,8 @@ async def first_friday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -167,7 +172,8 @@ async def first_monday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -189,7 +195,8 @@ async def first_tuesday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -211,7 +218,8 @@ async def first_wednesday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -233,7 +241,8 @@ async def first_thursday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
@@ -255,7 +264,8 @@ async def first_friday(message: Message):
             f'{emojize(":book:")} {date["schedule"][f"{day}.{i}"]["discipline"]}\n'
             f'{emojize(":office:")} ({date["schedule"][f"{day}.{i}"]["classroom"]})\n'
             f'{emojize(":hear_no_evil:")} {date["schedule"][f"{day}.{i}"]["teacher"]}\n'
-            f'{emojize(":mortar_board:")} {islecture}\n\n'
+            f'{emojize(":mortar_board:")} {islecture}\n'
+            f'{emojize(":computer:")} {date["schedule"][f"{day}.{i}"]["google_meet"]}\n\n'
         )
         text += t
     await message.answer(text=text)
