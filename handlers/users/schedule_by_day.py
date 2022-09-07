@@ -19,6 +19,7 @@ lessons_time = {
 }
 
 
+
 @dp.message_handler(text='Розклад')
 async def schedule(message: Message, state: FSMContext):
     text = (

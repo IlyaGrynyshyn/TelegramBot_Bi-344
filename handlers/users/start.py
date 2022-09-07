@@ -25,8 +25,8 @@ async def bot_start(message: types.Message, state: FSMContext):
         f" Щось пішло не так?"
         f"\nВсю потрібну інформацію ти знайдеш натиснувши /about"
 
-        #f"\n\nДля початку, скажи мені хто ти{emojize(':smirk_cat:')}:"
-        
+        # f"\n\nДля початку, скажи мені хто ти{emojize(':smirk_cat:')}:"
+
         f"\n\nОбери з якої підгрупи ти?{emojize(':sunglasses:')}"
     )
 
@@ -39,14 +39,16 @@ async def bot_start(message: types.Message, state: FSMContext):
     await message.answer(welcome_text, reply_markup=default.schoose_subgroup)
     await StatesOfBot.first()
 
+
 """
 Функція яка приймає вибір користувача з клавіатури schoose_subgroup
 """
 
-@dp.message_handler(state = StatesOfBot.start_state)
-async def choose_subgroup(message:types.Message, state:FSMContext):
+
+@dp.message_handler(state=StatesOfBot.start_state)
+async def choose_subgroup(message: types.Message, state: FSMContext):
     subgroup = message.text
-    await state.update_data(subgroup = subgroup)
+    await state.update_data(subgroup=subgroup)
     await StatesOfBot.choose_subgroup.set()
-    await message.answer(text = 'Дякую за вибір',reply_markup=default.main_menu)
+    await message.answer(text='Дякую за вибір', reply_markup=default.main_menu)
     await state.reset_state(with_data=False)

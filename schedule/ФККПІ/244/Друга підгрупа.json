@@ -1,174 +1,229 @@
 {
   "status": true,
   "schedule": {
-    "1.Пнд.3": {
-      "teacher": "Дубчак О.В.",
-      "discipline": "Основи мережевих технологій",
-      "classroom": "1.001",
-      "isLecture": "true",
-      "google_meet" : "https://classroom.google.com/c/NDU4MjIzNTg5MDk4"
-    },
     "1.Пнд.4": {
-      "teacher": "Хохлачева Ю.Є",
-       "discipline": "Моніторинг та тестування сист кібербез",
-      "classroom": "4.203",
-      "isLecture" : "true",
-      "google_meet" : "-"
+      "teacher": "Селезень Г.В",
+      "discipline": "Етика ділового спілкування",
+      "classroom": "3.213",
+      "isLecture": "false",
+      "google_meet": "-"
+    },
+    "1.Пнд.5": {
+      "teacher": "Куліковський А.В",
+      "discipline": "Захищені комп'ютерні системи та мережі",
+      "classroom": "11.115",
+      "isLecture": "false",
+      "google_meet": "-"
+    },
+    "1.Пнд.6": {
+      "teacher": "Куліковський А.В",
+      "discipline": "Захищені комп'ютерні системи та мережі",
+      "classroom": "11.115",
+      "isLecture": "false",
+      "google_meet": "-"
+    },
+    "1.Втр.1": {
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "1.Втр.2": {
-      "teacher": "Рацький В.А",
-       "discipline": "Основи мережевих технологій",
-      "classroom": "11.116",
-      "isLecture" : "false",
-      "google_meet" : "https://meet.google.com/two-afxr-tqk?authuser=0&hs=179"
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "1.Втр.3": {
-      "teacher": "Рацький В.А",
-       "discipline": "Основи мережевих технологій",
-      "classroom": "11.116",
-      "isLecture" : "false",
-      "google_meet" : "https://meet.google.com/two-afxr-tqk?authuser=0&hs=179"
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "1.Втр.4": {
-      "teacher": "Скибка О.П.",
-       "discipline": "Філософія",
-      "classroom": "11.302",
-      "isLecture" : "false",
-      "google_meet" : "-"
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
+      "isLecture": "false",
+      "google_meet": "-"
+    },
+    "1.Втр.5": {
+      "teacher": "Щербак Т.Л",
+      "discipline": "Системи банківської безпеки",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
+    },
+    "1.Втр.6": {
+      "teacher": "Вишиевська Т.Л.",
+      "discipline": "Соціотехнічна безпека",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
     "1.Срд.3": {
-      "teacher": "Ільєнко С.С",
-      "discipline": "Сигнали та проц у системах захист інфорорм",
-      "classroom": "1.002",
-      "isLecture" : "true",
-      "google_meet" : "https://meet.google.com/eac-xvmd-gec?authuser=0"
+      "teacher": "Єлізаров А.Б",
+      "discipline": "Захищені комп'ютерні системи та мережі",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
     "1.Срд.4": {
       "teacher": "Мелешко О.О",
       "discipline": "Технології програмування",
-      "classroom": "1.002",
-      "isLecture" : "true",
-      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
-
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
-    "1.Чтв.2": {
-      "teacher": "Мелешко Т.В",
-      "discipline": "Апаратне забезпення інформ систем ",
-      "classroom": "4.203",
-      "isLecture" : "true",
-      "google_meet" : "-"
+    "1.Чтв.4": {
+      "teacher": "Яковенко О.Л",
+      "discipline": "Нормативно-правове забезпечення кібербезпеки ",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
-     "1.Чтв.3": {
-      "teacher": "Дубчак О.B",
-      "discipline": "Вступ до Інтеернету речей",
-      "classroom": "1.001",
-      "isLecture" : "true",
-       "google_meet" : "https://meet.google.com/abg-abqs-qfc?authuser=0&hs=179"
+    "1.Чтв.5": {
+      "teacher": "Селезень Г.В",
+      "discipline": "Етика ділового спілкування",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
     "1.Птн.3": {
-      "teacher": "Шелуха О.О",
-      "discipline": "Сигнали та проц у систем захис інфоррм",
-      "classroom": "11.115",
-      "isLecture" : "false",
-      "google_meet" : "https://meet.google.com/eac-xvmd-gec?authuser=0&hs=179"
+      "teacher": "Сорокун А.Д",
+      "discipline": "Системи банківсбкої безпеки",
+      "classroom": "11.004",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "1.Птн.4": {
-      "teacher": "Шелуха О.О",
-      "discipline": "Сигнали та проц у систем захис інфоррм",
-      "classroom": "11.115",
-      "isLecture" : "false",
-      "google_meet" : "https://meet.google.com/eac-xvmd-gec?authuser=0&hs=179"
+      "teacher": "Вишневськька Н,С",
+      "discipline": "Соціотехнічна безпека",
+      "classroom": "11.117",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "1.Птн.5": {
-      "teacher": "Мелешко О.О",
-      "discipline": "Апаратне забезпечення інформ систем",
-      "classroom": "11.409",
+      "teacher": "Яковенко О.Л",
+      "discipline": "Нормативно-правове забезпечення кібербезпеки",
+      "classroom": "11.117",
       "isLecture": "false",
-      "google_meet" : "-"
+      "google_meet": "-"
+    },
+    "1.Птн.6": {
+      "teacher": "Яковенко О.Л",
+      "discipline": "Нормативно-правове забезпечення кібербезпеки",
+      "classroom": "11.117",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "2.Пнд.3": {
-      "teacher": "Дубчак О.В.",
-      "discipline": "Основи мережевих технологій",
-      "classroom": "1.001",
-      "isLecture": "true",
-      "google_meet" : "https://classroom.google.com/c/NDU4MjIzNTg5MDk4"
+      "teacher": "Вишневська Н.С",
+      "discipline": "Авіаційна безпека",
+      "classroom": "11.303",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "2.Пнд.4": {
-      "teacher": "Хохлачева Ю.Є",
-       "discipline": "Моніторинг та тестування сист кібербез",
-      "classroom": "4.203",
-      "isLecture" : "true",
-      "google_meet" : "-"
+      "teacher": "Вишневська Н.С",
+      "discipline": "Авіаційна безпека",
+      "classroom": "11.303",
+      "isLecture": "false",
+      "google_meet": "-"
     },
     "2.Втр.1": {
-      "teacher": "Хохлачева Ю.Є",
-      "discipline": "Моніторінг та тестування сист кібербез",
-      "classroom": "11.303",
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
       "isLecture": "false",
-      "google_meet" : "-"
+      "google_meet": "-"
     },
     "2.Втр.2": {
-      "teacher": "Проконенко О.В",
-      "discipline": "Технології програмування",
-      "classroom": "11.303",
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
       "isLecture": "false",
-      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
+      "google_meet": "-"
     },
     "2.Втр.3": {
-      "teacher": "Проконенко О.В",
-      "discipline": "Технології програмування",
-      "classroom": "11.303",
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
       "isLecture": "false",
-      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
+      "google_meet": "-"
+    },
+    "2.Втр.4": {
+      "teacher": "-",
+      "discipline": "Військова підготовка",
+      "classroom": "",
+      "isLecture": "false",
+      "google_meet": "-"
+    },
+    "2.Втр.5": {
+      "teacher": "Ворожко В.П",
+      "discipline": "Авіаційна безпека",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
+    },
+    "2.Втр.6": {
+      "teacher": "Щербак Т.Л",
+      "discipline": "Системи банківської безпеки",
+      "classroom": "11.110",
+      "isLecture": "true",
+      "google_meet": "-"
     },
     "2.Срд.3": {
-      "teacher": "Ільєнко С.С",
-      "discipline": "Сигнали та проц у систем захист інформ",
-      "classroom": "1.002",
+      "teacher": "Єлізаров А.Б",
+      "discipline": "Захищені компютерні системи та мережі",
+      "classroom": "8.203",
       "isLecture": "true",
-      "google_meet" : "https://meet.google.com/ykx-gdst-mcd?authuser=0&hs=179"
+      "google_meet": "-"
     },
     "2.Срд.4": {
       "teacher": "Мелешко О.О",
       "discipline": "Технології програмування",
-      "classroom": "1.002",
+      "classroom": "4.204",
       "isLecture": "true",
-      "google_meet" : "https://meet.google.com/tuv-sygq-jtk?authuser=0&hs=179"
-    },
-    "2.Чтв.3": {
-      "teacher": "Дубчак О.В",
-      "discipline": "Вступ до Інтернету речей",
-      "classroom": "4.203",
-      "isLecture": "true",
-      "google_meet" : "https://meet.google.com/cop-mepu-ajs?authuser=0&hs=179"
+      "google_meet": "-"
     },
     "2.Чтв.4": {
-      "teacher": "Скибка О.П",
-      "discipline": "Філосоції",
-      "classroom": "4.203",
+      "teacher": "Яковенко О.Л",
+      "discipline": "Нормативно-правове забезпечення кібезбезпеки",
+      "classroom": "4.204",
       "isLecture": "true",
-      "google_meet" : "https://meet.google.com/cip-ggzj-zyx?authuser=0&hs=179"
+      "google_meet": "-"
+    },
+    "2.Чтв.5": {
+      "teacher": "Селезень Г.В",
+      "discipline": "Етика ділового спілкування",
+      "classroom": "4.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
     "2.Птн.3": {
-      "teacher": "Рацький В.А",
-      "discipline": "Вступ до Інтернету речей",
-      "classroom": "11.116",
-      "isLecture": "false",
-      "google_meet" : "https://meet.google.com/epg-kqwi-cte?authuser=0&hs=179"
+      "teacher": "Вишневськ Н.С",
+      "discipline": "Соціотехнічна безпека",
+      "classroom": "2.204",
+      "isLecture": "true",
+      "google_meet": "-"
     },
     "2.Птн.4": {
-      "teacher": "Скибка О.П",
-      "discipline": "Філософія",
-      "classroom": "11.302",
+      "teacher": "Прокопенко О.В",
+      "discipline": "Технологіх програмування",
+      "classroom": "11.414",
       "isLecture": "false",
-      "google_meet" : "https://meet.google.com/cip-ggzj-zyx?authuser=0&hs=179"
+      "google_meet": "-"
     },
     "2.Птн.5": {
-      "teacher": "Мелешко Т.В",
-      "discipline": "Апаратне забезпечення інформацыйних систем",
-      "classroom": "11.409",
+      "teacher": "Прокопенко О.В",
+      "discipline": "Технологіх програмування",
+      "classroom": "11.414",
       "isLecture": "false",
-      "google_meet" : "-"
+      "google_meet": "-"
     }
   }
 }
